@@ -1,0 +1,551 @@
+/* ==========================================================================
+   AUTH.CSS - Complete Styling for Authentication Pages
+   ========================================================================== */
+
+/* Root Variables Specific to Auth Pages */
+:root {
+    /* Colors */
+    --auth-primary: #2563eb;      /* Main blue color */
+    --auth-secondary: #1e40af;    /* Darker blue */
+    --auth-success: #22c55e;      /* Green for success states */
+    --auth-danger: #ef4444;       /* Red for errors */
+    --auth-warning: #f59e0b;      /* Orange for warnings */
+    
+    /* Background Colors */
+    --auth-bg: #f8fafc;           /* Light background */
+    --auth-card-bg: #ffffff;      /* White card background */
+    --auth-input-bg: #ffffff;     /* Input background */
+    
+    /* Text Colors */
+    --auth-text-primary: #1f2937; /* Main text color */
+    --auth-text-secondary: #6b7280; /* Secondary text */
+    --auth-text-light: #9ca3af;   /* Light text */
+    
+    /* Border Colors */
+    --auth-border: #e5e7eb;       /* Light border */
+    --auth-border-focus: #2563eb; /* Border color on focus */
+    
+    /* Shadow */
+    --auth-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --auth-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Theme Variables */
+[data-theme="dark"] {
+    --auth-bg: #0f172a;
+    --auth-card-bg: #1e293b;
+    --auth-input-bg: #334155;
+    --auth-text-primary: #f8fafc;
+    --auth-text-secondary: #e2e8f0;
+    --auth-text-light: #cbd5e1;
+    --auth-border: #374151;
+    --auth-border-focus: #3b82f6;
+}
+
+/* ==========================================================================
+   1. BASE STYLES FOR AUTH PAGES
+   ========================================================================== */
+
+.auth-body {
+    background-color: var(--auth-bg);
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    color: var(--auth-text-primary);
+    transition: background-color 0.3s ease;
+}
+
+.auth-main {
+    padding: 100px 5% 50px;
+    min-height: calc(100vh - 150px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ==========================================================================
+   2. AUTH CONTAINER STYLES
+   ========================================================================== */
+
+.auth-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;  /* Two equal columns */
+    max-width: 1200px;
+    background: var(--auth-card-bg);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--auth-shadow);
+    transition: all 0.3s ease;
+}
+
+/* Form Container */
+.auth-form-container {
+    padding: 3rem;
+    transition: all 0.3s ease;
+}
+
+/* Form Header */
+.auth-form-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.auth-form-header h1 {
+    font-size: 2rem;
+    color: var(--auth-text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.auth-form-header p {
+    color: var(--auth-text-secondary);
+    font-size: 1.1rem;
+}
+
+/* ==========================================================================
+   3. FORM ELEMENTS
+   ========================================================================== */
+
+/* Form Base */
+.auth-form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Form Groups */
+.form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+/* Labels */
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--auth-text-primary);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+/* Input Groups */
+.input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Input Icons */
+.input-group i {
+    position: absolute;
+    left: 1rem;
+    color: var(--auth-text-light);
+    transition: color 0.3s ease;
+}
+
+/* Form Inputs */
+.input-group input {
+    width: 100%;
+    padding: 0.8rem 1rem 0.8rem 2.5rem;
+    border: 1px solid var(--auth-border);
+    border-radius: 8px;
+    background: var(--auth-input-bg);
+    color: var(--auth-text-primary);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: var(--auth-border-focus);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    outline: none;
+}
+
+.input-group input:focus + i {
+    color: var(--auth-primary);
+}
+
+/* Password Toggle */
+.password-toggle {
+    position: absolute;
+    right: 1rem;
+    color: var(--auth-text-light);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.password-toggle:hover {
+    color: var(--auth-text-primary);
+}
+
+/* Error Messages */
+.error-message {
+    color: var(--auth-danger);
+    font-size: 0.85rem;
+    margin-top: 0.3rem;
+    display: block;
+}
+
+/* Password Strength Indicator */
+.password-strength {
+    margin-top: 0.5rem;
+}
+
+.strength-bar {
+    height: 4px;
+    background-color: var(--auth-border);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.strength-level {
+    height: 100%;
+    width: 0;
+    transition: all 0.3s ease;
+}
+
+.strength-text {
+    font-size: 0.85rem;
+    color: var(--auth-text-secondary);
+    margin-top: 0.3rem;
+    display: block;
+}
+/* ==========================================================================
+   4. FORM OPTIONS AND ADDITIONAL ELEMENTS
+   ========================================================================== */
+
+/* Form Options Container */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+/* Remember Me Checkbox */
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.remember-me input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    accent-color: var(--auth-primary);
+}
+
+.remember-me label {
+    color: var(--auth-text-secondary);
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+/* Forgot Password Link */
+.forgot-password {
+    color: var(--auth-primary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+    color: var(--auth-secondary);
+    text-decoration: underline;
+}
+
+/* Terms and Conditions */
+.terms {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.terms input[type="checkbox"] {
+    margin-top: 0.3rem;
+    accent-color: var(--auth-primary);
+}
+
+.terms label {
+    font-size: 0.9rem;
+    color: var(--auth-text-secondary);
+}
+
+.terms a {
+    color: var(--auth-primary);
+    text-decoration: none;
+}
+
+.terms a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   5. BUTTONS AND ACTIONS
+   ========================================================================== */
+
+/* Main Auth Button */
+.auth-button {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--auth-primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.auth-button:hover {
+    background-color: var(--auth-secondary);
+    transform: translateY(-2px);
+}
+
+.auth-button:active {
+    transform: translateY(0);
+}
+
+.auth-button:disabled {
+    background-color: var(--auth-text-light);
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Loading State */
+.auth-button.loading {
+    position: relative;
+    color: transparent;
+}
+
+.auth-button.loading::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid white;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ==========================================================================
+   6. SOCIAL LOGIN SECTION
+   ========================================================================== */
+
+/* Social Login Container */
+.social-login {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.social-login p {
+    color: var(--auth-text-secondary);
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+/* Divider Line */
+.social-login p::before,
+.social-login p::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 30%;
+    height: 1px;
+    background-color: var(--auth-border);
+}
+
+.social-login p::before {
+    left: 0;
+}
+
+.social-login p::after {
+    right: 0;
+}
+
+/* Social Buttons Container */
+.social-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/* Social Button Styles */
+.social-button {
+    flex: 1;
+    padding: 0.8rem;
+    border: 1px solid var(--auth-border);
+    border-radius: 8px;
+    background: var(--auth-card-bg);
+    color: var(--auth-text-primary);
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+/* Google Button */
+.social-button.google:hover {
+    background-color: #dd4b39;
+    color: white;
+    border-color: #dd4b39;
+}
+
+/* Facebook Button */
+.social-button.facebook:hover {
+    background-color: #3b5998;
+    color: white;
+    border-color: #3b5998;
+}
+
+/* ==========================================================================
+   7. AUTH INFO SECTION (RIGHT SIDE)
+   ========================================================================== */
+
+.auth-info-container {
+    background: linear-gradient(135deg, var(--auth-primary), var(--auth-secondary));
+    padding: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background Pattern */
+.auth-info-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(255,255,255,0.1) 25%, transparent 25%);
+    background-size: 3rem 3rem;
+    animation: patternMove 20s linear infinite;
+}
+
+@keyframes patternMove {
+    from { background-position: 0 0; }
+    to { background-position: 6rem 6rem; }
+}
+
+.auth-info-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.auth-info-content h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.auth-features {
+    list-style: none;
+    padding: 0;
+}
+
+.auth-features li {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.auth-features i {
+    color: var(--auth-success);
+}
+
+/* ==========================================================================
+   8. RESPONSIVE DESIGN
+   ========================================================================== */
+
+/* Tablet and Smaller Desktops */
+@media screen and (max-width: 992px) {
+    .auth-container {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 1rem;
+    }
+
+    .auth-info-container {
+        display: none;
+    }
+}
+
+/* Mobile Devices */
+@media screen and (max-width: 768px) {
+    .auth-main {
+        padding: 80px 1rem 30px;
+    }
+
+    .auth-form-container {
+        padding: 2rem;
+    }
+
+    .social-buttons {
+        flex-direction: column;
+    }
+
+    .form-options {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+}
+
+/* Small Mobile Devices */
+@media screen and (max-width: 480px) {
+    .auth-form-header h1 {
+        font-size: 1.75rem;
+    }
+
+    .auth-form-container {
+        padding: 1.5rem;
+    }
+}
+
+/* ==========================================================================
+   9. ANIMATIONS
+   ========================================================================== */
+
+/* Form Animation */
+.auth-form-container {
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Input Focus Animation */
+.input-group input:focus {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.1); }
+    70% { box-shadow: 0 0 0 5px rgba(37, 99, 235, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); }
+}

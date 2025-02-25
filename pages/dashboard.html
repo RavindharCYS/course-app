@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Success Meets</title>
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/components/dashboard.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../assets/images/logo.png" alt="Success Meets Logo">
+                    Success Meets
+                </a>
+            </div>
+
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="dashboard.html" class="active">Dashboard</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="certificates.html">Certificates</a></li>
+                <li class="user-menu">
+                    <div class="user-profile">
+                        <img src="../assets/images/Profile.png" alt="User Profile" class="profile-img">
+                        <span class="user-name">John Doe</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="dropdown-menu">
+                        <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+                        <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+                        <a href="#" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                    <!-- Add Theme Toggle Button -->
+                <li class="theme-toggle-wrapper">
+                    <button id="themeToggle" class="theme-toggle-nav" aria-label="Toggle Theme">
+                        <i class="fas fa-moon"></i>
+                        <i class="fas fa-sun"></i>
+                    </button>
+                </li>
+                </li>
+            </ul>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="dashboard-main">
+        <!-- Dashboard Header -->
+        <section class="dashboard-header">
+            <div class="container">
+                <div class="welcome-section">
+                    <div class="welcome-text">
+                        <h1>Welcome back, John!</h1>
+                        <p>Track your progress and continue learning</p>
+                    </div>
+                    <div class="profile-overview">
+                        <img src="../assets/images/profile.jpg" alt="Profile" class="profile-image">
+                    </div>
+                </div>
+
+                <!-- Quick Stats -->
+                <div class="quick-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon courses-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>12</h3>
+                            <p>Enrolled Courses</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon progress-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>67%</h3>
+                            <p>Average Progress</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon certificates-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>5</h3>
+                            <p>Certificates Earned</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon achievements-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>8</h3>
+                            <p>Achievements</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dashboard Content -->
+        <div class="dashboard-content">
+            <!-- Left Column -->
+            <div class="main-content">
+                <!-- Progress Section -->
+                <section class="progress-section">
+                    <div class="section-header">
+                        <h2>Course Progress</h2>
+                        <a href="courses.html" class="view-all">View All</a>
+                    </div>
+                    
+                    <div class="course-progress-cards">
+                        <!-- Course Progress Card 1 -->
+                        <div class="course-progress-card">
+                            <div class="course-progress-header">
+                                <h3 class="course-title">Cyber Security Basics</h3>
+                                <span class="progress-percentage">75%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 75%"></div>
+                            </div>
+                            <div class="course-meta">
+                                <span><i class="fas fa-clock"></i> 2 hours left</span>
+                                <a href="course-detail.html" class="continue-btn">Continue</a>
+                            </div>
+                        </div>
+
+                        <!-- Course Progress Card 2 -->
+                        <div class="course-progress-card">
+                            <div class="course-progress-header">
+                                <h3 class="course-title">Communication Skills</h3>
+                                <span class="progress-percentage">45%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 45%"></div>
+                            </div>
+                            <div class="course-meta">
+                                <span><i class="fas fa-clock"></i> 4 hours left</span>
+                                <a href="course-detail.html" class="continue-btn">Continue</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Recent Activity -->
+                <section class="activity-section">
+                    <div class="section-header">
+                        <h2>Recent Activity</h2>
+                        <a href="#" class="view-all">View All</a>
+                    </div>
+
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-play-circle"></i>
+                            </div>
+                            <div class="activity-info">
+                                <h4>Completed Lesson 5</h4>
+                                <p>Cyber Security Basics</p>
+                                <span class="activity-time">2 hours ago</span>
+                            </div>
+                        </div>
+
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <div class="activity-info">
+                                <h4>Earned Certificate</h4>
+                                <p>Web Development Fundamentals</p>
+                                <span class="activity-time">1 day ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Column -->
+            <div class="sidebar">
+                <!-- Upcoming Deadlines -->
+                <section class="deadlines-section">
+                    <div class="section-header">
+                        <h2>Upcoming Deadlines</h2>
+                        <a href="#" class="view-all">View All</a>
+                    </div>
+
+                    <div class="deadline-list">
+                        <div class="deadline-item">
+                            <div class="deadline-info">
+                                <h4>Final Project Submission</h4>
+                                <p>Cyber Security Basics</p>
+                            </div>
+                            <span class="deadline-date">2 days left</span>
+                        </div>
+
+                        <div class="deadline-item">
+                            <div class="deadline-info">
+                                <h4>Quiz Assessment</h4>
+                                <p>Communication Skills</p>
+                            </div>
+                            <span class="deadline-date">5 days left</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Achievements -->
+                <section class="achievements-section">
+                    <div class="section-header">
+                        <h2>Recent Achievements</h2>
+                        <a href="#" class="view-all">View All</a>
+                    </div>
+
+                    <div class="achievement-grid">
+                        <div class="achievement-badge">
+                            <img src="../assets/images/badges/fast-learner.png" alt="Fast Learner" class="badge-icon">
+                            <span class="badge-name">Fast Learner</span>
+                        </div>
+
+                        <div class="achievement-badge">
+                            <img src="../assets/images/badges/perfect-score.png" alt="Perfect Score" class="badge-icon">
+                            <span class="badge-name">Perfect Score</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Success Meets</h3>
+                <p>Your pathway to success through quality education</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="certificates.html">Certificates</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: successmeetssm@gmail.com</p>
+                <p>Phone: +91 9360994617</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Success Meets. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+    <script src="../js/dashboard.js"></script>
+    <script>
+        // Immediately set the theme before the page renders
+        let savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+</body>
+</html>

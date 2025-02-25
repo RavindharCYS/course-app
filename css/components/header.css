@@ -1,0 +1,459 @@
+/* ==========================================================================
+   HEADER.CSS - Complete Styling for Website Header/Navigation
+   ========================================================================== */
+
+/* Root Variables Specific to Header */
+:root {
+    /* Colors */
+    --header-bg: #ffffff;         /* Header background */
+    --header-text: #1f2937;       /* Main text color */
+    --header-text-light: #6b7280; /* Secondary text color */
+    --header-primary: #2563eb;    /* Primary accent color */
+    --header-hover: #1d4ed8;      /* Hover state color */
+    
+    /* Shadows */
+    --header-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+    /* Heights */
+    --header-height: 80px;
+    
+    /* Transitions */
+    --header-transition: all 0.3s ease;
+}
+
+/* Dark Theme Variables */
+[data-theme="dark"] {
+    --header-bg: #1f2937;
+    --header-text: #f9fafb;
+    --header-text-light: #d1d5db;
+    --header-primary: #3b82f6;
+    --header-hover: #60a5fa;
+    --header-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Theme Toggle in Navigation Styles */
+.theme-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+}
+
+.theme-toggle-nav {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    color: var(--text-primary);
+}
+
+.theme-toggle-nav:hover {
+    background: rgba(37, 99, 235, 0.1);
+    transform: rotate(15deg);
+}
+
+.theme-toggle-nav i {
+    font-size: 1.2rem;
+    transition: transform 0.5s ease;
+}
+
+/* Hide the sun icon by default */
+.theme-toggle-nav .fa-sun {
+    display: none;
+}
+
+/* Show sun icon in dark mode */
+[data-theme="dark"] .theme-toggle-nav .fa-sun {
+    display: block;
+}
+
+[data-theme="dark"] .theme-toggle-nav .fa-moon {
+    display: none;
+}
+
+/* Animation for icon switch */
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.theme-toggle-nav i {
+    animation: rotate 0.5s ease;
+}
+
+/* Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
+    .theme-toggle-wrapper {
+        margin: 1rem 0;
+    }
+
+    .theme-toggle-nav {
+        width: 100%;
+        padding: 0.75rem;
+        border-radius: 6px;
+        background: rgba(37, 99, 235, 0.1);
+    }
+
+    .theme-toggle-nav:hover {
+        background: rgba(37, 99, 235, 0.2);
+    }
+}
+
+/* ==========================================================================
+   1. MAIN HEADER STYLES
+   ========================================================================== */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--header-height);
+    background: var(--header-bg);
+    box-shadow: var(--header-shadow);
+    z-index: 1000;
+    transition: var(--header-transition);
+}
+
+/* Header Scroll Effect */
+.header.scrolled {
+    --header-height: 70px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+[data-theme="dark"] .header.scrolled {
+    background: rgba(31, 41, 55, 0.95);
+}
+
+/* Navigation Container */
+.navbar {
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ==========================================================================
+   2. LOGO STYLES
+   ========================================================================== */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: var(--header-text);
+    font-weight: 700;
+    font-size: 1.5rem;
+    transition: var(--header-transition);
+}
+
+.logo:hover {
+    color: var(--header-primary);
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+}
+
+/* ==========================================================================
+   3. NAVIGATION LINKS
+   ========================================================================== */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    color: var(--header-text);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: var(--header-transition);
+}
+
+/* Hover Effect */
+.nav-links a:hover {
+    color: var(--header-primary);
+    background: rgba(37, 99, 235, 0.1);
+}
+
+/* Active Link */
+.nav-links a.active {
+    color: var(--header-primary);
+    background: rgba(37, 99, 235, 0.1);
+}
+
+/* Underline Animation */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 1rem;
+    right: 1rem;
+    height: 2px;
+    background: var(--header-primary);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    transform: scaleX(1);
+}
+
+/* ==========================================================================
+   4. AUTH BUTTONS
+   ========================================================================== */
+
+.login-btn,
+.register-btn {
+    padding: 0.5rem 1.25rem;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: var(--header-transition);
+}
+
+/* Login Button */
+.login-btn {
+    color: var(--header-primary);
+    border: 2px solid var(--header-primary);
+    background: transparent;
+}
+
+.login-btn:hover {
+    background: rgba(37, 99, 235, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Register Button */
+.register-btn {
+    background: var(--header-primary);
+    color: white !important;
+    border: none;
+}
+
+.register-btn:hover {
+    background: var(--header-hover);
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   5. MOBILE MENU
+   ========================================================================== */
+
+.mobile-menu {
+    display: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.mobile-menu span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: var(--header-text);
+    margin: 5px 0;
+    transition: var(--header-transition);
+}
+
+/* Mobile Menu Animation */
+.mobile-menu.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.mobile-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* ==========================================================================
+   6. DROPDOWN MENU (Optional)
+   ========================================================================== */
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--header-bg);
+    min-width: 200px;
+    border-radius: 6px;
+    box-shadow: var(--header-shadow);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: var(--header-transition);
+}
+
+.user-menu:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    color: var(--header-text);
+    text-decoration: none;
+    transition: var(--header-transition);
+}
+
+.dropdown-menu a:hover {
+    background: rgba(37, 99, 235, 0.1);
+    color: var(--header-primary);
+}
+
+/* ==========================================================================
+   7. USER PROFILE (When Logged In)
+   ========================================================================== */
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 6px;
+    transition: var(--header-transition);
+}
+
+.user-profile:hover {
+    background: rgba(37, 99, 235, 0.1);
+}
+
+.profile-img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-name {
+    color: var(--header-text);
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   8. RESPONSIVE DESIGN
+   ========================================================================== */
+
+@media screen and (max-width: 992px) {
+    .nav-links {
+        gap: 1rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .mobile-menu {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        background: var(--header-bg);
+        padding: 1rem;
+        flex-direction: column;
+        text-align: center;
+        box-shadow: var(--header-shadow);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 0.75rem 1rem;
+    }
+
+    .nav-links a::after {
+        display: none;
+    }
+
+    .login-btn,
+    .register-btn {
+        width: 100%;
+        text-align: center;
+        margin-top: 0.5rem;
+    }
+
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+    }
+}
+
+/* ==========================================================================
+   9. ANIMATIONS
+   ========================================================================== */
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.header {
+    animation: slideDown 0.5s ease-out;
+}
+
+/* ==========================================================================
+   10. UTILITY CLASSES
+   ========================================================================== */
+
+.hide-on-mobile {
+    display: none;
+}
+
+@media screen and (min-width: 768px) {
+    .hide-on-mobile {
+        display: block;
+    }
+}
+
+.show-on-mobile {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .show-on-mobile {
+        display: block;
+    }
+}

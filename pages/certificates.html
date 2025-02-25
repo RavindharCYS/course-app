@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificates - Success Meets</title>
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/components/certificates.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../assets/images/logo.png" alt="Success Meets Logo">
+                    Success Meets
+                </a>
+            </div>
+    
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="certificates.html" class="active">Certificates</a></li>
+                <li><a href="login.html" class="login-btn">Login</a></li>
+                <li><a href="register.html" class="register-btn">Register</a></li>
+                <!-- Add Theme Toggle Button -->
+                <li class="theme-toggle-wrapper">
+                    <button id="themeToggle" class="theme-toggle-nav" aria-label="Toggle Theme">
+                        <i class="fas fa-moon"></i>
+                        <i class="fas fa-sun"></i>
+                    </button>
+                </li>
+            </ul>
+    
+            <!-- Remove duplicate mobile menu -->
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div> 
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="certificates-main">
+        <!-- Certificates Header -->
+        <section class="certificates-header">
+            <div class="container">
+                <h1>My Certificates</h1>
+                <p>View and download your earned certificates</p>
+            </div>
+        </section>
+
+        <!-- Certificate Filters -->
+        <section class="certificate-filters">
+            <div class="container">
+                <!-- Search Bar -->
+                <div class="search-bar">
+                    <input type="text" placeholder="Search certificates...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+
+                <!-- Filter Options -->
+                <div class="filter-options">
+                    <select class="filter-select">
+                        <option value="all">All Categories</option>
+                        <option value="cyber">Cyber Security</option>
+                        <option value="soft">Soft Skills</option>
+                        <option value="aptitude">Aptitude</option>
+                        <option value="technical">Technical</option>
+                    </select>
+
+                    <select class="filter-select">
+                        <option value="newest">Newest First</option>
+                        <option value="oldest">Oldest First</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certificates Grid -->
+        <section class="certificates-grid">
+            <div class="container">
+                <!-- Certificate Card 1 -->
+                <div class="certificate-card">
+                    <div class="certificate-preview">
+                        <img src="../assets/certificates/cyber-security-basics.jpg" alt="Cyber Security Basics Certificate">
+                        <div class="certificate-overlay">
+                            <button class="preview-btn"><i class="fas fa-eye"></i> Preview</button>
+                            <button class="download-btn"><i class="fas fa-download"></i> Download</button>
+                        </div>
+                    </div>
+                    <div class="certificate-info">
+                        <h3>Cyber Security Basics</h3>
+                        <div class="certificate-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Completed: Jan 15, 2023</span>
+                            <span><i class="fas fa-award"></i> Grade: A</span>
+                        </div>
+                        <div class="certificate-actions">
+                            <button class="share-btn"><i class="fas fa-share-alt"></i> Share</button>
+                            <button class="verify-btn"><i class="fas fa-check-circle"></i> Verify</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certificate Card 2 -->
+                <div class="certificate-card">
+                    <div class="certificate-preview">
+                        <img src="../assets/certificates/communication-skills.jpg" alt="Communication Skills Certificate">
+                        <div class="certificate-overlay">
+                            <button class="preview-btn"><i class="fas fa-eye"></i> Preview</button>
+                            <button class="download-btn"><i class="fas fa-download"></i> Download</button>
+                        </div>
+                    </div>
+                    <div class="certificate-info">
+                        <h3>Effective Communication</h3>
+                        <div class="certificate-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Completed: Mar 20, 2023</span>
+                            <span><i class="fas fa-award"></i> Grade: A+</span>
+                        </div>
+                        <div class="certificate-actions">
+                            <button class="share-btn"><i class="fas fa-share-alt"></i> Share</button>
+                            <button class="verify-btn"><i class="fas fa-check-circle"></i> Verify</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certificate Card 3 -->
+                <div class="certificate-card">
+                    <div class="certificate-preview">
+                        <img src="../assets/certificates/logical-reasoning.jpg" alt="Logical Reasoning Certificate">
+                        <div class="certificate-overlay">
+                            <button class="preview-btn"><i class="fas fa-eye"></i> Preview</button>
+                            <button class="download-btn"><i class="fas fa-download"></i> Download</button>
+                        </div>
+                    </div>
+                    <div class="certificate-info">
+                        <h3>Logical Reasoning</h3>
+                        <div class="certificate-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Completed: May 5, 2023</span>
+                            <span><i class="fas fa-award"></i> Grade: B+</span>
+                        </div>
+                        <div class="certificate-actions">
+                            <button class="share-btn"><i class="fas fa-share-alt"></i> Share</button>
+                            <button class="verify-btn"><i class="fas fa-check-circle"></i> Verify</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certificate Preview Modal -->
+        <div class="certificate-modal" id="certificateModal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <img src="" alt="Certificate Preview" id="modalImage">
+                <div class="modal-actions">
+                    <button class="download-btn"><i class="fas fa-download"></i> Download</button>
+                    <button class="share-btn"><i class="fas fa-share-alt"></i> Share</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <button class="page-btn">...</button>
+            <button class="page-btn">5</button>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Success Meets</h3>
+                <p>Your pathway to success through quality education</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="certificates.html">Certificates</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: successmeetssm@gmail.com</p>
+                <p>Phone: +91 9360994617</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Success Meets. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+    <script src="../js/components/certificates.js"></script>
+
+    <!-- Certificate Handling Script -->
+    <script>
+        // Modal handling
+        const modal = document.getElementById('certificateModal');
+        const modalImg = document.getElementById('modalImage');
+        const previewBtns = document.querySelectorAll('.preview-btn');
+        const closeModal = document.querySelector('.close-modal');
+
+        previewBtns.forEach(btn => {
+            btn.onclick = function() {
+                const imgSrc = this.closest('.certificate-card')
+                    .querySelector('.certificate-preview img').src;
+                modal.style.display = "block";
+                modalImg.src = imgSrc;
+            }
+        });
+
+        closeModal.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+    <script>
+        // Immediately set the theme before the page renders
+        let savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+</body>
+</html>

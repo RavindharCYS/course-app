@@ -1,0 +1,581 @@
+/* ==========================================================================
+   COURSES.CSS - Complete Styling for Courses Page
+   ========================================================================== */
+
+/* Root Variables Specific to Courses Page */
+:root {
+    /* Colors */
+    --course-primary: #2563eb;     /* Main blue color */
+    --course-secondary: #1e40af;   /* Darker blue */
+    --course-success: #22c55e;     /* Green for success states */
+    --course-warning: #f59e0b;     /* Orange for warnings */
+    --course-danger: #ef4444;      /* Red for errors/important */
+    
+    /* Background Colors */
+    --course-bg: #f8fafc;          /* Main background */
+    --course-card-bg: #ffffff;     /* Course card background */
+    --course-header-bg: #1e40af;   /* Header background */
+    
+    /* Text Colors */
+    --course-text-primary: #1f2937;
+    --course-text-secondary: #6b7280;
+    --course-text-light: #9ca3af;
+    
+    /* Border Colors */
+    --course-border: #e5e7eb;
+    --course-border-hover: #d1d5db;
+    
+    /* Shadows */
+    --course-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --course-shadow-hover: 0 4px 6px rgba(0, 0, 0, 0.1);
+    
+    /* Category Colors */
+    --category-cyber: #3b82f6;     /* Cyber Security */
+    --category-soft: #8b5cf6;      /* Soft Skills */
+    --category-apt: #ec4899;       /* Aptitude */
+    --category-tech: #10b981;      /* Technical */
+}
+
+/* Dark Theme Variables */
+[data-theme="dark"] {
+    --course-bg: #0f172a;
+    --course-card-bg: #1e293b;
+    --course-header-bg: #2563eb;
+    --course-text-primary: #f8fafc;
+    --course-text-secondary: #e2e8f0;
+    --course-text-light: #cbd5e1;
+    --course-border: #374151;
+    --course-border-hover: #4b5563;
+    --course-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    --course-shadow-hover: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* ==========================================================================
+   1. MAIN CONTAINER AND HEADER STYLES
+   ========================================================================== */
+
+.courses-main {
+    padding-top: 80px;
+    min-height: 100vh;
+    background-color: var(--course-bg);
+    transition: background-color 0.3s ease;
+}
+
+/* Course Header */
+.course-header {
+    background: linear-gradient(135deg, var(--course-primary), var(--course-header-bg));
+    padding: 3rem 0;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Header Background Pattern */
+.course-header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(255,255,255,0.1) 25%, transparent 25%);
+    background-size: 3rem 3rem;
+    animation: headerPattern 20s linear infinite;
+}
+
+@keyframes headerPattern {
+    from { background-position: 0 0; }
+    to { background-position: 6rem 6rem; }
+}
+
+.course-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.course-header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    position: relative;
+    z-index: 1;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* ==========================================================================
+   2. COURSE FILTERS SECTION
+   ========================================================================== */
+
+.course-filters {
+    background: var(--course-card-bg);
+    padding: 1.5rem 0;
+    box-shadow: var(--course-shadow);
+    position: sticky;
+    top: 80px;
+    z-index: 100;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Search Bar */
+.search-bar {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--course-border);
+    border-radius: 8px;
+    font-size: 1rem;
+    background: var(--course-card-bg);
+    color: var(--course-text-primary);
+    transition: all 0.3s ease;
+}
+
+.search-bar input:focus {
+    border-color: var(--course-primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    outline: none;
+}
+
+.search-bar button {
+    padding: 0.75rem 1.5rem;
+    background: var(--course-primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.search-bar button:hover {
+    background: var(--course-secondary);
+    transform: translateY(-2px);
+}
+
+/* Filter Tabs */
+.filter-tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+}
+
+.filter-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    background: var(--course-bg);
+    color: var(--course-text-primary);
+    cursor: pointer;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    background: var(--course-border);
+}
+
+.filter-btn.active {
+    background: var(--course-primary);
+    color: white;
+}
+
+/* Progress Tabs */
+.progress-tabs {
+    display: flex;
+    gap: 1rem;
+    border-top: 1px solid var(--course-border);
+    padding-top: 1rem;
+}
+
+.progress-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    background: none;
+    color: var(--course-text-secondary);
+    cursor: pointer;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.progress-btn:hover {
+    color: var(--course-primary);
+}
+
+.progress-btn.active {
+    color: var(--course-primary);
+    position: relative;
+}
+
+.progress-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--course-primary);
+}
+/* ==========================================================================
+   3. COURSES GRID AND CARD STYLES
+   ========================================================================== */
+
+/* Courses Grid Container */
+.courses-grid {
+    padding: 3rem 0;
+}
+
+.courses-grid .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* Course Card */
+.course-card {
+    background: var(--course-card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--course-shadow);
+    transition: all 0.3s ease;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--course-shadow-hover);
+}
+
+/* Course Image Section */
+.course-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+    background: var(--course-bg);
+}
+
+.course-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.course-card:hover .course-image img {
+    transform: scale(1.05);
+}
+
+/* Course Badge */
+.course-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 500;
+    z-index: 1;
+}
+
+/* Category-specific badge colors */
+.course-badge.cyber {
+    background: var(--category-cyber);
+}
+
+.course-badge.soft {
+    background: var(--category-soft);
+}
+
+.course-badge.aptitude {
+    background: var(--category-apt);
+}
+
+.course-badge.technical {
+    background: var(--category-tech);
+}
+
+/* Course Content */
+.course-content {
+    padding: 1.5rem;
+}
+
+.course-content h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--course-text-primary);
+    line-height: 1.4;
+}
+
+/* Course Info */
+.course-info {
+    display: flex;
+    justify-content: space-between;
+    color: var(--course-text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.course-info span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.course-info i {
+    color: var(--course-primary);
+}
+
+/* Course Description */
+.course-content p {
+    color: var(--course-text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+/* Course Footer */
+.course-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid var(--course-border);
+}
+
+/* Rating System */
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.rating i {
+    color: #fbbf24; /* Star color */
+    font-size: 0.9rem;
+}
+
+.rating span {
+    color: var(--course-text-secondary);
+    font-size: 0.9rem;
+    margin-left: 0.5rem;
+}
+
+/* Enroll Button */
+.enroll-btn {
+    padding: 0.5rem 1.25rem;
+    background: var(--course-primary);
+    color: white;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.enroll-btn:hover {
+    background: var(--course-secondary);
+    transform: translateY(-2px);
+}
+
+/* Progress Bar (for enrolled courses) */
+.progress-bar {
+    height: 4px;
+    background: var(--course-border);
+    border-radius: 2px;
+    overflow: hidden;
+    margin: 1rem 0;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--course-success);
+    transition: width 0.3s ease;
+}
+
+/* ==========================================================================
+   4. COURSE STATUS INDICATORS
+   ========================================================================== */
+
+.course-status {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
+
+.status-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.status-badge.enrolled {
+    background: rgba(37, 99, 235, 0.1);
+    color: var(--course-primary);
+}
+
+.status-badge.completed {
+    background: rgba(34, 197, 94, 0.1);
+    color: var(--course-success);
+}
+
+.status-badge.in-progress {
+    background: rgba(245, 158, 11, 0.1);
+    color: var(--course-warning);
+}
+
+/* ==========================================================================
+   5. ANIMATIONS
+   ========================================================================== */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* ==========================================================================
+   6. RESPONSIVE DESIGN
+   ========================================================================== */
+
+/* Large Tablets */
+@media screen and (max-width: 992px) {
+    .course-header h1 {
+        font-size: 2rem;
+    }
+    
+    .filter-tabs {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+/* Tablets and Mobile */
+@media screen and (max-width: 768px) {
+    .course-header {
+        padding: 2rem 0;
+    }
+
+    .course-header h1 {
+        font-size: 1.75rem;
+    }
+
+    .search-bar {
+        flex-direction: column;
+    }
+
+    .search-bar button {
+        width: 100%;
+    }
+
+    .filter-tabs,
+    .progress-tabs {
+        overflow-x: auto;
+        padding-bottom: 1rem;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .course-info {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+/* Small Mobile Devices */
+@media screen and (max-width: 480px) {
+    .course-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .course-content {
+        padding: 1rem;
+    }
+
+    .course-footer {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+}
+
+/* ==========================================================================
+   7. LOADING STATES
+   ========================================================================== */
+
+.course-card.loading {
+    position: relative;
+    overflow: hidden;
+}
+
+.course-card.loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* ==========================================================================
+   8. PRINT STYLES
+   ========================================================================== */
+
+@media print {
+    .course-filters,
+    .course-header,
+    .enroll-btn,
+    .course-badge {
+        display: none;
+    }
+
+    .course-card {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid var(--course-border);
+    }
+
+    .course-image {
+        max-height: 150px;
+    }
+}

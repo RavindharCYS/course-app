@@ -1,0 +1,389 @@
+/* ==========================================================================
+   RESPONSIVE.CSS - Complete Responsive Design Styles
+   ========================================================================== */
+
+/* Root Variables for Breakpoints */
+:root {
+    --breakpoint-sm: 576px;    /* Small devices */
+    --breakpoint-md: 768px;    /* Medium devices */
+    --breakpoint-lg: 992px;    /* Large devices */
+    --breakpoint-xl: 1200px;   /* Extra large devices */
+    --container-padding: 1rem; /* Default container padding */
+}
+
+/* ==========================================================================
+   1. CONTAINER RESPONSIVENESS
+   ========================================================================== */
+
+.container {
+    width: 100%;
+    padding-right: var(--container-padding);
+    padding-left: var(--container-padding);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* Container max-widths for different screen sizes */
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+/* ==========================================================================
+   2. RESPONSIVE TYPOGRAPHY
+   ========================================================================== */
+
+/* Base font size adjustments */
+html {
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+/* Responsive headings */
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.75rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+}
+
+h5 {
+    font-size: 1.25rem;
+}
+
+h6 {
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    h4 {
+        font-size: 1.25rem;
+    }
+
+    h5 {
+        font-size: 1.1rem;
+    }
+}
+
+/* ==========================================================================
+   3. RESPONSIVE GRID SYSTEM
+   ========================================================================== */
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.col {
+    flex: 1;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+/* Grid columns */
+.col-1 { flex: 0 0 8.333333%; max-width: 8.333333%; }
+.col-2 { flex: 0 0 16.666667%; max-width: 16.666667%; }
+.col-3 { flex: 0 0 25%; max-width: 25%; }
+.col-4 { flex: 0 0 33.333333%; max-width: 33.333333%; }
+.col-5 { flex: 0 0 41.666667%; max-width: 41.666667%; }
+.col-6 { flex: 0 0 50%; max-width: 50%; }
+.col-7 { flex: 0 0 58.333333%; max-width: 58.333333%; }
+.col-8 { flex: 0 0 66.666667%; max-width: 66.666667%; }
+.col-9 { flex: 0 0 75%; max-width: 75%; }
+.col-10 { flex: 0 0 83.333333%; max-width: 83.333333%; }
+.col-11 { flex: 0 0 91.666667%; max-width: 91.666667%; }
+.col-12 { flex: 0 0 100%; max-width: 100%; }
+
+/* Responsive columns */
+@media (max-width: 768px) {
+    [class*="col-"] {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+/* ==========================================================================
+   4. RESPONSIVE NAVIGATION
+   ========================================================================== */
+
+/* Mobile menu toggle */
+.mobile-menu {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .mobile-menu {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        background: var(--bg-primary);
+        padding: 1rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+        margin: 0.5rem 0;
+    }
+}
+
+/* ==========================================================================
+   5. RESPONSIVE IMAGES
+   ========================================================================== */
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.responsive-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Image aspect ratios */
+.img-16-9 {
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}
+
+.img-4-3 {
+    aspect-ratio: 4/3;
+    object-fit: cover;
+}
+
+.img-1-1 {
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+/* ==========================================================================
+   6. RESPONSIVE SPACING
+   ========================================================================== */
+
+/* Margin utilities */
+.m-1 { margin: 0.25rem; }
+.m-2 { margin: 0.5rem; }
+.m-3 { margin: 1rem; }
+.m-4 { margin: 1.5rem; }
+.m-5 { margin: 3rem; }
+
+/* Padding utilities */
+.p-1 { padding: 0.25rem; }
+.p-2 { padding: 0.5rem; }
+.p-3 { padding: 1rem; }
+.p-4 { padding: 1.5rem; }
+.p-5 { padding: 3rem; }
+
+@media (max-width: 768px) {
+    .m-md-0 { margin: 0; }
+    .p-md-0 { padding: 0; }
+    
+    .m-md-1 { margin: 0.25rem; }
+    .p-md-1 { padding: 0.25rem; }
+    
+    .m-md-2 { margin: 0.5rem; }
+    .p-md-2 { padding: 0.5rem; }
+}
+
+/* ==========================================================================
+   7. RESPONSIVE UTILITIES
+   ========================================================================== */
+
+/* Hide elements based on screen size */
+.hide-sm { display: none; }
+.hide-md { display: none; }
+.hide-lg { display: none; }
+.hide-xl { display: none; }
+
+@media (min-width: 576px) {
+    .hide-sm { display: block; }
+}
+
+@media (min-width: 768px) {
+    .hide-md { display: block; }
+}
+
+@media (min-width: 992px) {
+    .hide-lg { display: block; }
+}
+
+@media (min-width: 1200px) {
+    .hide-xl { display: block; }
+}
+
+/* Show elements based on screen size */
+@media (max-width: 576px) {
+    .show-sm { display: block; }
+}
+
+@media (max-width: 768px) {
+    .show-md { display: block; }
+}
+
+@media (max-width: 992px) {
+    .show-lg { display: block; }
+}
+
+@media (max-width: 1200px) {
+    .show-xl { display: block; }
+}
+
+/* Text alignment */
+.text-center-sm {
+    @media (max-width: 576px) {
+        text-align: center;
+    }
+}
+
+.text-center-md {
+    @media (max-width: 768px) {
+        text-align: center;
+    }
+}
+
+/* ==========================================================================
+   8. RESPONSIVE CARDS AND GRIDS
+   ========================================================================== */
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================================================
+   9. RESPONSIVE FORMS
+   ========================================================================== */
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    .form-group {
+        margin-bottom: 0.75rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    textarea {
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+}
+
+/* ==========================================================================
+   10. RESPONSIVE TABLES
+   ========================================================================== */
+
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 768px) {
+    .table-stack tr {
+        display: block;
+        margin-bottom: 1rem;
+    }
+
+    .table-stack td {
+        display: block;
+        text-align: right;
+    }
+
+    .table-stack td::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+    }
+}
+
+/* ==========================================================================
+   11. PRINT STYLES
+   ========================================================================== */
+
+@media print {
+    .no-print {
+        display: none !important;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 2cm;
+    }
+}

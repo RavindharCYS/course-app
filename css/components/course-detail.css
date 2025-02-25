@@ -1,0 +1,366 @@
+/* Course Detail Page Styles */
+.course-detail-main {
+    padding-top: 80px;
+    background-color: #f8fafc;
+}
+
+/* Course Header */
+.course-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    padding: 3rem 0;
+    color: white;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.breadcrumb a {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.breadcrumb a:hover {
+    opacity: 0.8;
+}
+
+/* Course Intro */
+.course-intro {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.course-info h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.course-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.course-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.course-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.course-preview img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Course Content */
+.course-content {
+    padding: 3rem 0;
+}
+
+.content-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+/* Course Details */
+.course-details > div {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.course-details h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+}
+
+/* Learning Objectives */
+.objectives-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    list-style: none;
+}
+
+.objectives-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--text-color);
+}
+
+.objectives-list i {
+    color: #10b981;
+}
+
+/* Curriculum */
+.module {
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.module-header {
+    background: #f8fafc;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.module-header h3 {
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.module-content {
+    padding: 1rem;
+    border-top: 1px solid #e5e7eb;
+}
+
+.module-content ul {
+    list-style: none;
+}
+
+.module-content li {
+    padding: 0.75rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--light-text);
+}
+
+/* Instructor Section */
+.instructor-profile {
+    display: flex;
+    gap: 2rem;
+    align-items: start;
+}
+
+.instructor-profile img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.instructor-info h3 {
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.instructor-bio {
+    margin-top: 1rem;
+    color: var(--light-text);
+    line-height: 1.6;
+}
+
+/* Course Sidebar */
+.course-sidebar {
+    position: sticky;
+    top: 100px;
+}
+
+.course-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.price {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.price .amount {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.card-features ul {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.card-features li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 0;
+    color: var(--text-color);
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.enroll-button, .wishlist-button {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.enroll-button {
+    background: var(--primary-color);
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.wishlist-button {
+    background: #f3f4f6;
+    color: var(--text-color);
+}
+
+.enroll-button:hover {
+    background: var(--secondary-color);
+}
+
+.wishlist-button:hover {
+    background: #e5e7eb;
+}
+
+/* Related Courses */
+.related-courses {
+    padding: 3rem 0;
+    background: white;
+}
+
+.related-courses h2 {
+    margin-bottom: 2rem;
+}
+
+.related-courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.related-courses .course-card {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.related-courses .course-card:hover {
+    transform: translateY(-5px);
+}
+
+.related-courses .course-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px 12px 0 0;
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.rating {
+    color: #f59e0b;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.view-course {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.view-course:hover {
+    background: var(--secondary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .content-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .course-sidebar {
+        position: static;
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .course-intro {
+        grid-template-columns: 1fr;
+    }
+
+    .course-preview {
+        order: -1;
+    }
+
+    .course-info h1 {
+        font-size: 2rem;
+    }
+
+    .course-meta {
+        gap: 1rem;
+    }
+
+    .instructor-profile {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .instructor-profile img {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .course-header {
+        padding: 2rem 0;
+    }
+
+    .course-info h1 {
+        font-size: 1.5rem;
+    }
+
+    .course-meta {
+        flex-direction: column;
+    }
+
+    .module-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+}
